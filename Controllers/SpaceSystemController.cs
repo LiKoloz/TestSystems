@@ -10,6 +10,7 @@ namespace TestSystem.Controllers
         [HttpGet("api/systems")]
         async public Task<IActionResult> GetAllSystems()
         {
+            await Console.Out.WriteLineAsync("Получение systems!");
             ApplicationContext db = new ApplicationContext();
             if(db.systems != null)
             {
@@ -40,6 +41,7 @@ namespace TestSystem.Controllers
         [HttpDelete("api/systems/delete/{id}")]
         async public Task<IActionResult> DeleteSystem(int id)
         {
+            await Console.Out.WriteLineAsync("Delete");
             ApplicationContext db = new ApplicationContext();
             var system = db.systems.FirstOrDefault(s => s.Id == id);
             if (system != null)
@@ -51,18 +53,21 @@ namespace TestSystem.Controllers
             return BadRequest();
         }
 
-        [HttpPost("/api/addsystem")]
+        [HttpPost("api/addsystem")]
         async public Task<IActionResult> AddSystem(SpaceSystem newSystem)
         {
+            await Console.Out.WriteLineAsync(newSystem.ToString());
+            await Console.Out.WriteLineAsync("Добавление system!");
             ApplicationContext db = new ApplicationContext();
             db.systems.Add(newSystem);
             db.SaveChanges();
             return Ok();
         }
 
-        [HttpPut("/api/addsystem")]
+        [HttpPut("api/changesystem")]
         async public Task<IActionResult> ChangeSystem(SpaceSystem newSystem)
         {
+            await Console.Out.WriteLineAsync("Изменение системы");
             ApplicationContext db = new ApplicationContext();
             var s = db.systems.FirstOrDefault(s => s.Id == newSystem.Id);
             if (s != null)

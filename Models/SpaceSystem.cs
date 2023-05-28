@@ -1,26 +1,35 @@
-﻿namespace TestSystem.Models
+﻿using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using System.Text.Json;
+using System.Text.Json.Serialization;
+
+namespace TestSystem.Models
 {
+ 
     public class SpaceSystem
     {
         private List<SpaceObject> _spaceObjects = new();
-        private string? _name;
+        private string? _name = String.Empty;
         private ulong _age = 0;
         private SpaceObject? _centerOfGravity;
         public delegate void badSpaceObjectType(string message);
         public static event badSpaceObjectType? Notify;
 
-        SpaceSystem(string name, ulong age, SpaceObject? centerOfGravity , SpaceObject[]? planets)
+        public SpaceSystem(string name, ulong age, SpaceObject? centerOfGravity , SpaceObject[]? planets)
         {
-            Name = name;
-            Age = age;
+            name = name;
+            age = age;
             if(centerOfGravity != null) CenterOfGravity = centerOfGravity; 
             if(planets != null) Planets = planets.ToList();
         }
-        SpaceSystem() { }
+        public SpaceSystem() { }
 
-
+        public override string ToString()
+        {
+            return $"{Id} - {Name} - {Age}";
+        }
         public int Id { get; set; }
-        public string Name 
+        public string? Name 
         {
             get
             {

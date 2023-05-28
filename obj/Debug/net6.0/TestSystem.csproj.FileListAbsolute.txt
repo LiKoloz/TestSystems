@@ -44,3 +44,13 @@ G:\TestSystem\obj\Debug\net6.0\refint\TestSystem.dll
 G:\TestSystem\obj\Debug\net6.0\TestSystem.pdb
 G:\TestSystem\obj\Debug\net6.0\TestSystem.genruntimeconfig.cache
 G:\TestSystem\obj\Debug\net6.0\ref\TestSystem.dll
+G:\TestSystem\bin\Debug\net6.0\client\angular.json
+G:\TestSystem\bin\Debug\net6.0\client\package-lock.json
+G:\TestSystem\bin\Debug\net6.0\client\package.json
+G:\TestSystem\bin\Debug\net6.0\client\tsconfig.app.json
+G:\TestSystem\bin\Debug\net6.0\client\tsconfig.json
+G:\TestSystem\bin\Debug\net6.0\client\tsconfig.spec.json
+G:\TestSystem\bin\Debug\net6.0\Newtonsoft.Json.dll
+G:\TestSystem\bin\Debug\net6.0\System.Text.Encodings.Web.dll
+G:\TestSystem\bin\Debug\net6.0\System.Text.Json.dll
+G:\TestSystem\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll

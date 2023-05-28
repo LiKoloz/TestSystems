@@ -49,7 +49,7 @@ namespace TestSystem.Controllers
             return BadRequest();
         }
 
-        [HttpPost("/api/addsystem")]
+        [HttpPost("api/addobject")]
         async public Task<IActionResult> AddSystem(SpaceObject newObject)
         {
             ApplicationContext db = new ApplicationContext();
@@ -58,7 +58,7 @@ namespace TestSystem.Controllers
             return Ok();
         }
 
-        [HttpPut("/api/addsystem")]
+        [HttpPut("api/changeobject")]
         async public Task<IActionResult> ChangeSystem(SpaceObject newObject)
         {
             ApplicationContext db = new ApplicationContext();

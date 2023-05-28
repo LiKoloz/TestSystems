@@ -6,13 +6,16 @@ namespace TestSystem
         {
             var builder = WebApplication.CreateBuilder(args);
 
-           
+           builder.Services.AddCors();
             builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
             var app = builder.Build();
 
+            app.UseCors(builder => builder.AllowAnyHeader()
+                                            .AllowAnyMethod()
+                                            .AllowAnyOrigin());
             if (app.Environment.IsDevelopment())
             {
                 app.UseSwagger();
@@ -22,7 +25,6 @@ namespace TestSystem
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
-
 
             app.MapControllers();
 

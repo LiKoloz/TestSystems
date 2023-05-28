@@ -8,8 +8,8 @@
         private uint _diameter = 0;
         private uint _weight = 0;
 
-        SpaceObject() { }
-        SpaceObject(string type, string name, ulong age, uint diametr, uint weight)
+        public SpaceObject() { }
+        public SpaceObject(string type, string name, ulong age, uint diametr, uint weight)
         {
             Type = type;
             Name = name;
